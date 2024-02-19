@@ -1,0 +1,213 @@
+@import "../assets/scss/variables.scss";
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  height: 80px;
+  box-shadow: 0px 11px 10px -10px $transparent-black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  @media (min-width: $breakpoint-md) {
+    height: 63px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    height: 122px;
+  }
+}
+
+.header__logo {
+  margin-top: -20px;
+  margin-left: 10px;
+  @media (min-width: $breakpoint-md) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  svg {
+    @media (min-width: $breakpoint-xl) {
+      width: 260px;
+      height: 79px;
+    }
+  }
+}
+
+.header__buttons {
+  @media (min-width: $breakpoint-md) {
+    margin-left: 30px;
+  }
+}
+
+.header__bucket,
+.header__menu--burger {
+  border: none;
+  background-color: inherit;
+}
+
+.header__bucket {
+  position: relative;
+
+  svg {
+    fill: $blue;
+    @media (min-width: $breakpoint-md) {
+      width: 35px;
+      height: 35px;
+    }
+    @media (min-width: $breakpoint-xl) {
+      width: 55px;
+      height: 55px;
+    }
+  }
+}
+
+.header__bucket:hover svg {
+  @media (min-width: $breakpoint-md) {
+    fill: $orange;
+  }
+}
+
+.header__bucket:hover .header__bucket--counter {
+  @media (min-width: $breakpoint-md) {
+    border: 1px solid $orange;
+  }
+}
+
+.header__bucket:active svg {
+  fill: $orange;
+}
+
+.header__bucket:active .header__bucket--counter {
+  border: 1px solid $orange;
+}
+
+.header__menu--burger {
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.header__bucket--counter {
+  position: absolute;
+  border: 1px solid $blue;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 10px;
+  left: 34px;
+  background-color: white;
+}
+
+.header__menu--section {
+  display: none;
+  @media (min-width: $breakpoint-md) {
+    display: flex;
+    font-size: 12px;
+    font-weight: normal;
+    gap: 15px;
+    a {
+      svg {
+        @media (min-width: $breakpoint-xl) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+  @media (min-width: $breakpoint-xl) {
+    font-size: 24px;
+  }
+}
+
+.header__phone {
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    margin-right: auto;
+  }
+  @media (min-width: $breakpoint-xl) {
+    font-size: 24px;
+  }
+}
+
+.header__menu--section-link {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+
+  svg {
+    fill: $blue;
+  }
+}
+
+.header__menu--section-link:hover svg {
+  fill: $orange;
+}
+
+.header__menu--section-link::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background-color: $orange;
+  position: absolute;
+  top: 40px;
+  display: none;
+}
+
+.header__menu--section-link:hover::after {
+  display: block;
+}
+
+.header__drop-down-list {
+  position: absolute;
+  width: 100%;
+  top: 82px;
+  font-family: "AvenirNextCyr";
+  font-weight: normal;
+  font-size: 16px;
+  a {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.header__drop-down-link {
+  position: relative;
+
+  svg {
+    fill: $blue;
+  }
+}
+
+.header__drop-down-link:active svg {
+  fill: $orange;
+}
+
+.header__drop-down-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: $grey;
+  top: 50px;
+  opacity: 50%;
+}
