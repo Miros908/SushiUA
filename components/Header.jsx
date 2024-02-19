@@ -1,8 +1,11 @@
 import "../assets/scss/Header.scss";
 import SvgSprite from "../components/SVG/Sprite.jsx";
+import jsonData from "../data.json";
 import React, { useState } from "react";
 
 export default function Header() {
+  {
+  }
   const [isMenuClose, setIsMenuOpen] = useState(true);
   return (
     <div className="header">
@@ -20,16 +23,16 @@ export default function Header() {
             <use xlinkHref="#delivery-icon"></use>
           </svg>
         </a>
-        <a href="tel:+380985483883" className="header__drop-down-link">
-          <p className="header__drop-down-text">+380 (98) 548 38 83</p>
+        <a href="tel:{jsonData.tel}" className="header__drop-down-link">
+          <p className="header__drop-down-text">{jsonData.tel}</p>
           <svg className="header__drop-down-icon" width="15" height="15">
             <use xlinkHref="#icon-phone"></use>
           </svg>
         </a>
       </div>
 
-      <a href="tel:+380985483883" className="header__phone">
-        <p> +380 (98) 548 38 83</p>
+      <a href="tel:{jsonData.tel}" className="header__phone">
+        <p> {jsonData.tel}</p>
       </a>
 
       <a className="header__logo" src="#">
