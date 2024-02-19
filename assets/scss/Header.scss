@@ -161,6 +161,9 @@ a {
   position: absolute;
   top: 40px;
   display: none;
+  @media (min-width: $breakpoint-xl) {
+    top: 80px;
+  }
 }
 
 .header__menu--section-link:hover::after {
