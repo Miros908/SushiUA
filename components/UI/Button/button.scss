@@ -1,0 +1,82 @@
+@import "../assets/scss/variables.scss";
+.button-container {
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  button:hover {
+    @media (min-width: $breakpoint-xl) {
+      background-color: $orange;
+      color: white;
+    }
+  }
+
+  button:active {
+    background-color: $orange;
+    color: white;
+  }
+}
+
+.button-order {
+  @media (min-width: $breakpoint-md) {
+    width: 175px;
+    height: 26px;
+    font-size: 8px;
+    background-color: inherit;
+    font-family: "AvenirNextCyr";
+    font-weight: bold;
+    font-size: 9px;
+    text-wrap: nowrap;
+    padding: 0;
+    border: 1px solid $orange;
+    border-radius: 5px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    width: 330px;
+    height: 50px;
+    font-size: 18px;
+  }
+}
+
+.button {
+  width: 88px;
+  height: 28px;
+  background-color: inherit;
+  font-family: "AvenirNextCyr";
+  font-weight: bold;
+  font-size: 9px;
+  text-wrap: nowrap;
+  padding: 0;
+  border: 1px solid $orange;
+  border-radius: 5px;
+  @media (min-width: $breakpoint-md) {
+    width: 74px;
+    height: 24px;
+    font-size: 8px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    width: 139px;
+    height: 46px;
+    font-size: 16px;
+  }
+}
+
+.button-category {
+  width: 124px;
+  height: 26px;
+  background-color: inherit;
+  font-family: "AvenirNextCyr";
+  font-weight: normal;
+  font-size: 9px;
+  text-wrap: nowrap;
+  padding: 0;
+  border: 1px solid $orange;
+  border-radius: 10px;
+
+  @media (min-width: $breakpoint-xl) {
+    width: 233px;
+    height: 50px;
+    font-size: 18px;
+  }
+}

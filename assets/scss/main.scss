@@ -1,3 +1,4 @@
+@import "./variables.scss";
 @font-face {
   font-family: "AvenirNextCyr";
   src: url("../font/AvenirNextCyr-Medium.woff") format("woff"),
@@ -40,4 +41,9 @@ body {
 
 .hidden {
   display: none;
+}
+@media (max-width: $breakpoint-md) {
+  html {
+    font-size: 2.5vw;
+  }
 }

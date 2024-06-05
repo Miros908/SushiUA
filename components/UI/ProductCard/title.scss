@@ -1,0 +1,19 @@
+@import "../assets/scss/variables.scss";
+
+.title {
+  font-weight: 600;
+  font-size: 7px;
+  text-transform: uppercase;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: 8px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    font-size: 16px;
+  }
+}
+
+.title-in-bucket {
+  text-transform: none;
+  font-size: 11px;
+}

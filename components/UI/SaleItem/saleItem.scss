@@ -1,0 +1,41 @@
+@import "../assets/scss/variables.scss";
+.saleItem-container {
+  width: 269px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  @media (min-width: $breakpoint-xl) {
+    width: 506px;
+  }
+}
+
+.saleItem__header {
+  font-size: 16px;
+  font-weight: 600;
+  @media (min-width: $breakpoint-xl) {
+    font-size: 30px;
+  }
+}
+
+.saleItem__date {
+  font-size: 9px;
+  color: $special-black;
+  @media (min-width: $breakpoint-xl) {
+    font-size: 16px;
+  }
+}
+
+.saleItem__img {
+  width: 100%;
+}
+
+.saleItem__info {
+  font-size: 12px;
+  font-weight: 500;
+  color: $special-black;
+  @media (min-width: $breakpoint-xl) {
+    font-size: 20px;
+  }
+}

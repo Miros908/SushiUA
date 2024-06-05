@@ -1,0 +1,24 @@
+@import "../assets/scss/variables.scss";
+
+.input-wrap {
+  position: relative;
+  .input-before {
+    position: absolute;
+  }
+  .input-after {
+    position: absolute;
+  }
+  input {
+    border: 1px solid $orange;
+    border-radius: 3px;
+    width: 100%;
+  }
+
+  &.is-before input {
+    padding-left: 40px;
+  }
+
+  &.is-after input {
+    padding-right: 40px;
+  }
+}

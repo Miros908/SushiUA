@@ -1,0 +1,27 @@
+@import "../assets/scss/variables.scss";
+.checkbox-input {
+  visibility: hidden;
+  display: none;
+}
+
+.tick {
+  display: block;
+  width: 24px;
+  height: 26px;
+  border: 1px solid $orange;
+  border-radius: 5px;
+
+  @media (min-width: $breakpoint-xl) {
+    width: 45px;
+    height: 49px;
+    border-radius: 7px;
+  }
+}
+
+.checkbox-input:checked + .tick {
+  background-color: $orange;
+  background-image: url("../SVG/Vector.svg");
+  background-repeat: no-repeat;
+  background-size: 70%;
+  background-position: center;
+}

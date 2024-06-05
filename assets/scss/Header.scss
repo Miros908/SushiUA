@@ -1,4 +1,4 @@
-@import "../assets/scss/variables.scss";
+@import "./variables.scss";
 
 a {
   text-decoration: none;
@@ -29,6 +29,8 @@ a {
     transform: translateX(-50%);
   }
   svg {
+    width: 137px;
+    height: 42px;
     @media (min-width: $breakpoint-xl) {
       width: 260px;
       height: 79px;
@@ -52,6 +54,8 @@ a {
   position: relative;
 
   svg {
+    width: 40px;
+    height: 40px;
     fill: $blue;
     @media (min-width: $breakpoint-md) {
       width: 35px;
@@ -213,4 +217,19 @@ a {
   background-color: $grey;
   top: 50px;
   opacity: 50%;
+}
+
+.header__icon {
+  width: 15px;
+  height: 15px;
+}
+
+.header__menu--burger-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.header__menu--burger-close {
+  width: 30px;
+  height: 30px;
 }

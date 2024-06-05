@@ -1,101 +1,99 @@
 import "../assets/scss/Header.scss";
 import SvgSprite from "../components/SVG/Sprite.jsx";
+import Svg from "./SVG/index.jsx";
 import jsonData from "../data.json";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
-  {
-  }
-  const [isMenuClose, setIsMenuOpen] = useState(true);
+  const { tel } = jsonData;
+  const [isMenuClose, setIsMenuСlose] = useState(true);
   return (
-    <div className="header">
+    <header className="header">
       <SvgSprite />
       <div className={isMenuClose ? "hidden" : "header__drop-down-list"}>
-        <a className="header__drop-down-link" href="#">
+        <Link to="/sales" className="header__drop-down-link">
           <p className="header__drop-down-text">Акции</p>
-          <svg className="header__drop-down-icon" width="15" height="15">
-            <use xlinkHref="#icon-sale"></use>
-          </svg>
-        </a>
-        <a className="header__drop-down-link" href="#">
+          <Svg
+            name="icon-sale"
+            className="header__drop-down-icon header__icon"
+          ></Svg>
+        </Link>
+        <Link to="/delivery" className="header__drop-down-link" href="#">
           <p className="header__drop-down-text">Доставка</p>
-          <svg className="header__drop-down-icon" width="15" height="15">
-            <use xlinkHref="#delivery-icon"></use>
-          </svg>
-        </a>
-        <a href="tel:{jsonData.tel}" className="header__drop-down-link">
-          <p className="header__drop-down-text">{jsonData.tel}</p>
-          <svg className="header__drop-down-icon" width="15" height="15">
-            <use xlinkHref="#icon-phone"></use>
-          </svg>
+
+          <Svg
+            name="delivery-icon"
+            className="header__drop-down-icon header__icon"
+          ></Svg>
+        </Link>
+        <a href="tel:{tel}" className="header__drop-down-link">
+          <p className="header__drop-down-text">{tel}</p>
+
+          <Svg
+            name="icon-phone"
+            className="header__drop-down-icon header__icon"
+          ></Svg>
         </a>
       </div>
 
-      <a href="tel:{jsonData.tel}" className="header__phone">
-        <p> {jsonData.tel}</p>
+      <a href="tel:{tel}" className="header__phone">
+        {tel}
       </a>
 
       <a className="header__logo" src="#">
-        <svg className="header__logo-icon" width="137" height="42" fill="none">
-          <use xlinkHref="#logo"></use>
-        </svg>
+        <Svg name="logo" className="header__logo-icon" fill="none"></Svg>
       </a>
       <div className="header__menu--section">
         <a className="header__menu--section-link" href="#">
           <p className="header__menu--section-text">Меню</p>
-          <svg className="header__menu--section-icon" width="15" height="15">
-            <use xlinkHref="#menu-icon"></use>
-          </svg>
+
+          <Svg
+            name="menu-icon"
+            className="header__menu--section-icon header__icon"
+          ></Svg>
+          <Svg name="footer-picture"></Svg>
         </a>
         <a className="header__menu--section-link" href="#">
           <p className="header__menu--section-text">Акции</p>
-          <svg
-            className="header__menu--section-sale-icon"
-            width="15"
-            height="15"
-          >
-            <use xlinkHref="#icon-sale"></use>
-          </svg>
+
+          <Svg
+            name="icon-sale"
+            className="header__menu--section-sale-icon header__icon"
+          ></Svg>
         </a>
         <a className="header__menu--section-link" href="#">
           <p className="header__menu--section-text">Доставка</p>
-          <svg
-            className="header__menu--section-delivery-icon"
-            width="15"
-            height="15"
-          >
-            <use xlinkHref="#delivery-icon"></use>
-          </svg>
+
+          <Svg
+            name="delivery-icon"
+            className="header__menu--section-delivery-icon header__icon"
+          ></Svg>
         </a>
       </div>
 
       <div className="header__buttons">
         <button className={isMenuClose ? "header__bucket" : "hidden"}>
-          <svg className="header__bucket-icon" width="40" height="40">
-            <use xlinkHref="#bucket-icon"></use>
-          </svg>
+          <Svg name="bucket-icon" className="header__bucket-icon"></Svg>
           <span className="header__bucket--counter">0</span>
         </button>
 
         <button
           className="header__menu--burger"
-          onClick={() => setIsMenuOpen(!isMenuClose)}
+          onClick={() => {
+            setIsMenuСlose(!isMenuClose);
+          }}
         >
-          <svg
+          <Svg
             className={
               isMenuClose
                 ? "header__menu--burger-icon"
                 : "header__menu--burger-close"
             }
-            width={isMenuClose ? "40" : "30"}
-            height={isMenuClose ? "40" : "30"}
-          >
-            <use
-              xlinkHref={isMenuClose ? "#burger-icon" : "#close-burger-icon"}
-            ></use>
-          </svg>
+            name={isMenuClose ? "burger-icon" : "close-burger-icon"}
+          ></Svg>
         </button>
       </div>
-    </div>
+    </header>
   );
 }

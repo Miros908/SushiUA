@@ -1,0 +1,49 @@
+@import "../assets/scss/variables.scss";
+
+.counterWrapper {
+  display: flex;
+  font-family: "AvenirNextCyr";
+  gap: 15px;
+}
+
+.increment,
+.decrement {
+  width: 30px;
+  height: 30px;
+  border: 2px solid $orange;
+  border-radius: 50%;
+  background-color: inherit;
+  font-weight: bold;
+  position: relative;
+  color: $orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  @media (min-width: $breakpoint-xl) {
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+  }
+}
+
+.count {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  @media (min-width: $breakpoint-xl) {
+    font-size: 18px;
+  }
+}
+
+.increment:disabled {
+  border: 2px solid $special-grey;
+  color: $special-grey;
+}
+
+.decrement:disabled {
+  border: 2px solid $special-grey;
+  color: $special-grey;
+}

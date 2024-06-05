@@ -1,0 +1,8 @@
+@import "../assets/scss/variables.scss";
+.header-category {
+  font-weight: 600;
+  font-size: 21px;
+  @media (min-width: $breakpoint-xl) {
+    font-size: 40px;
+  }
+}

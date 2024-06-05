@@ -1,0 +1,31 @@
+@import "../assets/scss/variables.scss";
+.prodDetails {
+  display: flex;
+  align-items: center; /* Центрирование по вертикали */
+  justify-content: center;
+  gap: 2px;
+  width: fit-content;
+  font-size: 5px;
+  @media (min-width: $breakpoint-md) {
+    font-size: 6px;
+  }
+  @media (min-width: $breakpoint-xl) {
+    font-size: 12px;
+    gap: 4px;
+  }
+}
+
+.point {
+  width: 1px;
+  height: 1px;
+  border-radius: 50%;
+  background-color: black;
+  @media (min-width: $breakpoint-xl) {
+    width: 2px;
+    height: 2px;
+  }
+}
+
+.prodDetailsInBucket {
+  font-size: 8px;
+}
