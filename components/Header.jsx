@@ -1,4 +1,5 @@
 import "../assets/scss/Header.scss";
+
 import SvgSprite from "../components/SVG/Sprite.jsx";
 import Svg from "./SVG/index.jsx";
 import jsonData from "../data.json";
@@ -7,92 +8,55 @@ import { Link } from "react-router-dom";
 
 export default function Header() {
   const { tel } = jsonData;
-  const [isMenuClose, setIsMenuСlose] = useState(true);
+
   return (
-    <header className="header">
+    <header class="header fx-sb container">
       <SvgSprite />
-      <div className={isMenuClose ? "hidden" : "header__drop-down-list"}>
-        <Link to="/sales" className="header__drop-down-link">
-          <p className="header__drop-down-text">Акции</p>
-          <Svg
-            name="icon-sale"
-            className="header__drop-down-icon header__icon"
-          ></Svg>
+      <div class="header-left-nav fx-sb">
+        <button class="city-btn">Винница</button>
+        <ul class="lang-menu">
+          <li class="lang-submenu">
+            <p>Ru</p>
+            <ul class="lang-drop">
+              <li>Ua</li>
+              <li>Eng</li>
+            </ul>
+          </li>
+        </ul>
+        <a href="tel:{tel}">{tel}</a>
+      </div>
+      <div class="header-logo-container">
+        <Link to="#" className="header-logo" src="#">
+          <Svg name="logo" fill="none"></Svg>
         </Link>
-        <Link to="/delivery" className="header__drop-down-link" href="#">
-          <p className="header__drop-down-text">Доставка</p>
-
-          <Svg
-            name="delivery-icon"
-            className="header__drop-down-icon header__icon"
-          ></Svg>
-        </Link>
-        <a href="tel:{tel}" className="header__drop-down-link">
-          <p className="header__drop-down-text">{tel}</p>
-
-          <Svg
-            name="icon-phone"
-            className="header__drop-down-icon header__icon"
-          ></Svg>
-        </a>
       </div>
 
-      <a href="tel:{tel}" className="header__phone">
-        {tel}
-      </a>
-
-      <a className="header__logo" src="#">
-        <Svg name="logo" className="header__logo-icon" fill="none"></Svg>
-      </a>
-      <div className="header__menu--section">
-        <a className="header__menu--section-link" href="#">
-          <p className="header__menu--section-text">Меню</p>
-
-          <Svg
-            name="menu-icon"
-            className="header__menu--section-icon header__icon"
-          ></Svg>
-          <Svg name="footer-picture"></Svg>
-        </a>
-        <a className="header__menu--section-link" href="#">
-          <p className="header__menu--section-text">Акции</p>
-
-          <Svg
-            name="icon-sale"
-            className="header__menu--section-sale-icon header__icon"
-          ></Svg>
-        </a>
-        <a className="header__menu--section-link" href="#">
-          <p className="header__menu--section-text">Доставка</p>
-
-          <Svg
-            name="delivery-icon"
-            className="header__menu--section-delivery-icon header__icon"
-          ></Svg>
-        </a>
-      </div>
-
-      <div className="header__buttons">
-        <button className={isMenuClose ? "header__bucket" : "hidden"}>
-          <Svg name="bucket-icon" className="header__bucket-icon"></Svg>
-          <span className="header__bucket--counter">0</span>
-        </button>
-
-        <button
-          className="header__menu--burger"
-          onClick={() => {
-            setIsMenuСlose(!isMenuClose);
-          }}
-        >
-          <Svg
-            className={
-              isMenuClose
-                ? "header__menu--burger-icon"
-                : "header__menu--burger-close"
-            }
-            name={isMenuClose ? "burger-icon" : "close-burger-icon"}
-          ></Svg>
-        </button>
+      <div className="header-right-nav fx-sb">
+        <nav className=" header-right-nav-list fx-sb">
+          <ul className="header-menu fx-sb">
+            <li className="header-menu-item fx-sb">
+              <Link to="#" className="header-menu-item-link">
+                <span className="header-menu-par">Меню</span>
+                <Svg name="menu-icon" className="header-menu-icon"></Svg>
+              </Link>
+            </li>
+            <li className="header-menu-item fx-sb">
+              <Link to="#" className="header-menu-item-link">
+                <span className="header-menu-par">Акции</span>
+                <Svg name="icon-sale" className="header-menu-icon"></Svg>
+              </Link>
+            </li>
+            <li className="header-menu-item fx-sb">
+              <Link to="#" className="header-menu-item-link">
+                <span className="header-menu-par">Доставка</span>
+                <Svg name="delivery-icon" className="header-menu-icon"></Svg>
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <Link to="#" className="header-bucket">
+          <Svg name="bucket-icon"></Svg>
+        </Link>
       </div>
     </header>
   );
